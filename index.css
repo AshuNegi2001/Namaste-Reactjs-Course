@@ -1,3 +1,22 @@
-#container {
-    background-color: red;;
+.container{
+    width: 100%;
+    margin:0;
+    background: rgb(0, 132, 255);
+    display: flex;
+    justify-content: space-between;
+}
+
+.youLogo{
+    margin-left: 20px;
+    cursor: pointer;
+}
+.searchInput{
+    margin:16px 10px;
+    width: 900px;
+    height:40px;
+}
+.userLogo{
+    margin: 25px 0px;
+    margin-right:25px;
+    cursor: pointer;
 }
