@@ -1,9 +1,36 @@
+/***
+ *
+ * Created A Server
+ * HMR - Hot Module Replacement
+ * File Watcher algorithm - C++
+ * BUNDLING
+ * MINIFY
+ * Cleaning our Code
+ * Dev abd Production Build
+ * Super Fast build algorithm
+ * Image Optimization
+ * Caching while development
+ * Compression
+ * Compatble with older version of browser
+ * HTTPS on dev
+ * port Number
+ * Consistent Hashing Algorithm
+ * Zero Config
+ *
+ *
+ *
+ * Transitive Dependencies
+ */
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const heading = React.createElement(
   "h1",
   {
     id: "title",
   },
-  "Heading 1"
+  "Heading 1 for parcel"
 );
 
 const heading2 = React.createElement(
@@ -14,19 +41,20 @@ const heading2 = React.createElement(
   "Heading 2"
 );
 
-const container = React.createElement(
+const container = React.createElement( // createElement is react method or api for making an element.
   "div",
   {
     id: "container",
+    hello: "world",
   },
   [heading, heading2]
 );
 
 console.log(heading);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById("root"));//Call createRoot to create a React root for displaying content inside a browser DOM element.
 
 //passing a react element inside the root
 
 //async defer
-root.render(container);
+root.render(container);// render method help us to render the content in the browser DOM element.also we can use array list for passing multiple element in render method. render method replace all old element with new element which we pass in render method.

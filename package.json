@@ -1,0 +1,33 @@
+{
+  "name": "namaste-reactjs-course",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AshuNegi2001/Namaste-Reactjs-Course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AshuNegi2001/Namaste-Reactjs-Course/issues"
+  },
+  "homepage": "https://github.com/AshuNegi2001/Namaste-Reactjs-Course#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "browserLists" : [
+    "last 2 chrome versions", 
+    "> 0.5%"
+  ]
+}
