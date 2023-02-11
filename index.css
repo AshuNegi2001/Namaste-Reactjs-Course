@@ -1,22 +1,31 @@
-.container{
-    width: 100%;
-    margin:0;
-    background: rgb(0, 132, 255);
-    display: flex;
-    justify-content: space-between;
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
 }
 
-.youLogo{
-    margin-left: 20px;
-    cursor: pointer;
+.nav-items ul {
+  list-style: none;
+  display: flex;
 }
-.searchInput{
-    margin:16px 10px;
-    width: 900px;
-    height:40px;
+
+.nav-items ul li {
+  padding: 20px;
 }
-.userLogo{
-    margin: 25px 0px;
-    margin-right:25px;
-    cursor: pointer;
+
+.card {
+  width: 200px;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+.card img {
+  width: 100%;
+}
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
 }
