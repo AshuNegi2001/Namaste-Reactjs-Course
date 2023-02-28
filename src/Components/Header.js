@@ -1,5 +1,5 @@
-import React from "react";
-import logo from "../logo/FOOD_PIPE.png";
+import React, { useState } from "react";
+import logo from "../Images/FOOD_PIPE.png";
 
 export const Title = () => {
   return (
@@ -9,7 +9,8 @@ export const Title = () => {
   );
 };
 
-const Header = ()=> {
+const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div className="header">
       <Title />
@@ -20,9 +21,27 @@ const Header = ()=> {
           <li>Contact</li>
           <li>Cart</li>
         </ul>
+        {/** Here, we have our login and logout button */}
+        {isLoggedIn ? (
+          <button
+            onClick={() => {
+              setIsLoggedIn(false);
+            }}
+          >
+            Logout
+          </button>
+        ) : (
+          <button
+            onClick={() => {
+              setIsLoggedIn(true);
+            }}
+          >
+            Login
+          </button>
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default Header;

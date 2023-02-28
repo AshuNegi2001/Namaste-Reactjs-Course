@@ -1,10 +1,10 @@
-import { restaurantList } from "../config";
 import RestaurantCard from "./RestaurantCard";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
-function filterData(searchText, restaurants) {
-  const filterData = restaurants.filter((restaurant) =>
-    restaurant.data.data.name.toLowerCase().includes(searchText.toLowerCase())
+function filterData(searchText, allRestaurants) {
+  const filterData = allRestaurants.filter((restaurant) =>
+    restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
   );
   return filterData;
 }
@@ -14,7 +14,33 @@ function filterData(searchText, restaurants) {
 const Body = () => {
   // useState: To create a state variable, searchText is local state variable
   const [searchText, setSearchText] = useState("");
-  const [restaurants, setRestaurants] = useState(restaurantList);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [allRestaurants, setAllRestaurants] = useState([]);
+
+  useEffect(() => {
+    // API call
+    getRestaurants();
+  }, []);
+  // empty dependency array => once useEffect call after the initial render
+  // when [searchText] is dependency array => once useEffect call after the initial render + everytime call or render when searchText changes
+
+  async function getRestaurants() {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5469116&lng=77.3424353&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    console.log(json);
+    // Optional chaining:
+    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+  }
+  // if restaurants is empty => render shimer Ui
+  // if restaurants has data => show the restauant card
+
+  // not component render (early return)
+  if (!allRestaurants) return null;
+
+  //conditional rendering:
   return (
     <>
       <div className="search-container">
@@ -29,24 +55,30 @@ const Body = () => {
           className="search-btn"
           onClick={() => {
             // filter the data
-            const data = filterData(searchText, restaurants);
+            const data = filterData(searchText, allRestaurants);
             // update the state of restaurants list
-            setRestaurants(data);
+            setFilteredRestaurants(data);
           }}
         >
           Search
         </button>
       </div>
-      <div className="restaurant-list">
-        {restaurants.map((restaurant) => {
-          return (
-            <RestaurantCard
-              key={restaurant.data.data.id}
-              {...restaurant.data.data}
-            />
-          );
-        })}
-      </div>
+      {allRestaurants?.length === 0 ? (
+        <Shimmer />
+      ) : (
+        <div className="restaurant-list">
+          {filteredRestaurants?.length === 0
+            ? "No restaurants match your filter!" // conditional rendering
+            : filteredRestaurants.map((restaurant) => {
+                return (
+                  <RestaurantCard
+                    key={restaurant.data.id}
+                    {...restaurant.data}
+                  />
+                );
+              })}
+        </div>
+      )}
     </>
   );
 };
