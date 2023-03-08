@@ -1,3 +1,8 @@
+/* all link css */
+a {
+  text-decoration: none;
+}
+
 /* Header css */
 .header {
   display: flex;
@@ -23,6 +28,10 @@
 
 .nav-items ul li {
   padding: 20px;
+}
+
+.home-link, .about-link, .contact-link {
+  color: black;
 }
 
 /* search css */
@@ -58,8 +67,9 @@
 /* card css */
 
 .card {
-  width: 200px;
-  padding: 10px;
+  width: 250px;
+  height: 350px;
+  padding: 10px 10px 0 10px;
   margin: 10px;
   box-shadow: 2px 4px 7px 0 rgba(221, 224, 236, 0.6),
     -2px -4px 7px 0 rgba(221, 224, 236, 0.6);
@@ -68,6 +78,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: black;
 }
 .card:hover {
   transform: scale(1.05);
@@ -76,21 +87,26 @@
   width: 100%;
   border-radius: 2px;
 }
-
 .card span {
   display: flex;
   justify-content: space-between;
 }
 
+.card> h5{
+  margin-top: 5px;
+} 
+
 .restaurant-list {
   display: flex;
   flex-wrap: wrap;
   margin: 10px;
+  justify-content: center;
 }
+
 
 /* shimmer css */
 .shimmer-card {
-  width: 200px;
+  width: 250px;
   padding: 10px;
   margin: 10px;
   background-color: #fcfcfc;
@@ -102,27 +118,27 @@
 
 .shimmer-title {
   width: 60%;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .shimmer-tags {
   width: 80%;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .shimmer-details {
   width: 100%;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .stroke {
-  height: 15px;
+  height: 20px;
   background: #838383;
 }
 
 .shimmer-img {
   height: 144px;
-  width: 200px;
+  width: 250px;
   border-radius: 1px;
   /* width: 100%; */
 }
@@ -141,10 +157,78 @@
   to {
     background-position: 1000px 0;
   }
-}
+} 
 
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+
+/* menu */
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+/* Sign in */
+.signIn-container {
+  width: 400px;
+  margin: 50px auto;
+}
+.signIn-form {
+  text-align: center;
+  max-width: 400px;
+  padding: 25px 40px;
+  border-radius: 10px;
+  background-color: rgba(255, 162, 0, 0.811);
+  color: white;
+}
+
+.signIn-input-email {
+  outline:0;
+  border: 0;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 14px;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  padding : 10px;
+  box-sizing: border-box;
+  
+}
+.signIn-input-password {
+  outline:0;
+  border: 0;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 14px;
+  color: black;
+  margin: 25px 0 12px 0;
+  padding : 10px;
+  box-sizing: border-box;
+  
+}
+
+.signIn-form button{
+  outline:0;
+  border: 0;
+  width: 25%;
+  border-radius: 8px;
+  background-color:  #abab98;
+  color: white;
+  font-size: 17px;
+  margin: 20px 0;
+  padding: 10px 5px;
+  cursor: pointer;
+}
+.signIn-form> p.errors {
+  color: red;
+  text-align:left;
+  margin: 0 0 0 10px;
+  
 }

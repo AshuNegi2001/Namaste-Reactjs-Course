@@ -1,6 +1,8 @@
 import RestaurantCard from "./RestaurantCard";
 import React, { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { swiggy_api_URL } from "../Config";
+import { Link } from "react-router-dom";
 
 function filterData(searchText, allRestaurants) {
   const filterData = allRestaurants.filter((restaurant) =>
@@ -25,9 +27,7 @@ const Body = () => {
   // when [searchText] is dependency array => once useEffect call after the initial render + everytime call or render when searchText changes
 
   async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5469116&lng=77.3424353&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(swiggy_api_URL);
     const json = await data.json();
     console.log(json);
     // Optional chaining:
@@ -71,10 +71,12 @@ const Body = () => {
             ? "No restaurants match your filter!" // conditional rendering
             : filteredRestaurants.map((restaurant) => {
                 return (
-                  <RestaurantCard
-                    key={restaurant.data.id}
-                    {...restaurant.data}
-                  />
+                  <Link
+                    to={"/restaurant/" + restaurant.data.id}
+                    key={restaurant.data.id}  // Now, the key should be in our Link component because when we use map function in react which component we mapping it should have any key. 
+                  >
+                    <RestaurantCard {...restaurant.data} />
+                  </Link>
                 );
               })}
         </div>

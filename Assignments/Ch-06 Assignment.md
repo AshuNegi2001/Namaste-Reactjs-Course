@@ -16,7 +16,7 @@ In simple words,`microservices architecture` is a collection of smaller independ
 `Monolithic services` is a traditional software development approach in which the whole operation of the system is centered as a single, autonomous entity on a single application. It is unified and all the functions are handled and served in one location.
 
 ## Q3. What is the difference between Monolith and Microservice?
-![Diff micro and mono](../src/Images/mono-micro.png)
+![Diff micro and mono](../src/assets/Images/mono-micro.png)
 
 ## Q4. Why do we need a useEffect Hook?
 `useEffect Hook` is javascript function provided by `react`. The useEffect Hook allows you to  `eliminate side effects` in your components. Some examples of side effects are: `fetching API data`, `directly updating the DOM`, and `setting up subscriptions or timers`, etc can be lead to unwarranted side-effects.

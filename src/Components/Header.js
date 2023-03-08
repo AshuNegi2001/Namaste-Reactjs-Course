@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import logo from "../Images/FOOD_PIPE.png";
+import logo from "../assets/Images/FOOD_PIPE.png";
+import { Link } from "react-router-dom";
 
 export const Title = () => {
   return (
@@ -10,33 +11,36 @@ export const Title = () => {
 };
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(true);
   return (
     <div className="header">
       <Title />
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link to="/home" className = "home-link">Home</Link>
+          </li>
+          <li>
+            <Link to="/about" className = "about-link">About</Link>
+          </li>
+          <li>
+            <Link to="/contact"className = "contact-link">Contact</Link>
+          </li>
           <li>Cart</li>
         </ul>
         {/** Here, we have our login and logout button */}
-        {isLoggedIn ? (
+        {isSignedIn ? (
           <button
             onClick={() => {
-              setIsLoggedIn(false);
+              setIsSignedIn(false);
             }}
           >
-            Logout
+            Sign out
           </button>
         ) : (
           <button
-            onClick={() => {
-              setIsLoggedIn(true);
-            }}
-          >
-            Login
+            >
+            <Link to = "/signin">sign in</Link>
           </button>
         )}
       </div>
