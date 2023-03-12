@@ -21,15 +21,30 @@ const Body = () => {
 
   useEffect(() => {
     // API call
-    getRestaurants();
+    getRestaurants(); // we can't call async funtion directly here because it will give to performance loss.
   }, []);
+
+  //  useEffect Hook => Concept start from here...
+  // This useEffect is not a part of website. It just concept a of unmounting in useEffect hook how it work?
+  // useEffect(() => {
+  //   const timer = setInterval(()=>{
+  //     console.log("useEffect timer")
+  //   }, 1000)
+  //   return( // this return function will called when we unmounting this component
+  //     ()=>{
+  //       clearInterval(timer);
+  //       console.log("useEffect return");
+  //     }
+  //   )
+  // }) // Concept ended here...
+
   // empty dependency array => once useEffect call after the initial render
   // when [searchText] is dependency array => once useEffect call after the initial render + everytime call or render when searchText changes
 
   async function getRestaurants() {
     const data = await fetch(swiggy_api_URL);
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     // Optional chaining:
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
@@ -73,7 +88,7 @@ const Body = () => {
                 return (
                   <Link
                     to={"/restaurant/" + restaurant.data.id}
-                    key={restaurant.data.id}  // Now, the key should be in our Link component because when we use map function in react which component we mapping it should have any key. 
+                    key={restaurant.data.id} // Now, the key should be in our Link component because when we use map function in react which component we mapping it should have any key.
                   >
                     <RestaurantCard {...restaurant.data} />
                   </Link>

@@ -28,9 +28,9 @@ const SignIn = () =>{
         <div className = "signIn-container">
         <form className = "signIn-form" onSubmit = {handleSubmit}>
             <h1>Sign in</h1>
-            <input type="email"  className = "signIn-input-email" name = "email" autocomplete = "off" id = "email" placeholder = "Enter your email..." value = {values.email} onChange = {handleChange} onBlur = {handleBlur}/>
+            <input type="email"  className = "signIn-input-email" name = "email" autoComplete = "off" id = "email" placeholder = "Enter your email..." value = {values.email} onChange = {handleChange} onBlur = {handleBlur}/>
             {(errors.email && touched.email)? <p className = "errors">{errors.email}</p> : null}
-            <input type="password"  className = "signIn-input-password" name = "password" id = "password" placeholder = "Enter your password..." value = {values.password}  onChange = {handleChange} onBlur = {handleBlur}/>
+            <input type="password"  className = "signIn-input-password" name = "password" autoComplete = "off" id = "password" placeholder = "Enter your password..." value = {values.password}  onChange = {handleChange} onBlur = {handleBlur}/>
             {(errors.password && touched.password)? <p className = "errors">{errors.password}</p> : null}
 
             <button type = "submit">Sign in</button>
