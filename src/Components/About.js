@@ -28,6 +28,7 @@ class About extends Component{
                 <h2>Class:{this.state.class}</h2>
                 {/* <ProfileClass xyz = "React" />  */}
                 <Profile  name = "function ashu"/>
+                <ProfileClass />
             </div>
             </>
         )
