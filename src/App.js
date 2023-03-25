@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{ lazy, Suspense }from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -10,8 +10,28 @@ import Contact from "./Components/Contact";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import SignIn from "./Components/SignIn";
 import Profile from "./Components/Profile";
+import useOnline from "./utils/useOnline";
+// import InstaMart from "./Components/InstaMart";
+
+const InstaMart = lazy(()=> import('./Components/InstaMart'));
+// whenever we will do on demand loading in our website react will suspend our rendering of that component.and If we want to stop that suspend loading then, we will use <suspense> component from react library.
+
+
+// These all are similiar things:
+// code splitting 
+// chunking
+// dynamic bundling
+// lazy loading
+// on demand loading 
+// dynamic import
 
 const AppLayout = () => {
+
+  // This hook will return boolean value for online or offline 
+  const isOnline = useOnline();
+  if(!isOnline) {
+    return <h1> !Ooh Offline, Please Check your internet</h1>
+  }
   return (
     <>
       <Header />
@@ -49,6 +69,10 @@ const approuter = createBrowserRouter([
       {
         path: "/restaurant/:restaurantId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "instamart",
+        element: <Suspense fallback = {<h1> This is shimmer of Instamart</h1>}> <InstaMart /></Suspense>,
       },
     ],
   },

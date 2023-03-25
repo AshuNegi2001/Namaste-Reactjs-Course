@@ -4,7 +4,10 @@ export const IMG_CDN_URL =
 
 export const swiggy_api_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5469116&lng=77.3424353&page_type=DESKTOP_WEB_LISTING";
 
-export const swiggyMenu_api_URL = "https://www.swiggy.com/dapi/menu/v4/full?lat=28.5469116&lng=77.3424353&menuId=";
+// old api restaurant menu => export const swiggyMenu_api_URL = "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/v4/full?lat=28.5469116&lng=77.3424353&menuId=";
+
+// Updated api of restaurant
+export const swiggyMenu_api_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.5355161&lng=77.3910265&restaurantId=";
 
 // config Driven UI
 // export const restaurantList = [

@@ -3,13 +3,9 @@ import React, { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { swiggy_api_URL } from "../Config";
 import { Link } from "react-router-dom";
+import { filterData } from "../utils/Helper"; // For reusability, maintainability, readability filterData function is added in Helper.js file of Utils folder
 
-function filterData(searchText, allRestaurants) {
-  const filterData = allRestaurants.filter((restaurant) =>
-    restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-  );
-  return filterData;
-}
+
 
 // Body Component for body section: It contain all restaurant cards
 // We are mapping restaurantList array and passing JSON data to RestaurantCard component as props with unique key as index
@@ -51,6 +47,9 @@ const Body = () => {
   }
   // if restaurants is empty => render shimer Ui
   // if restaurants has data => show the restauant card
+
+  
+  
 
   // not component render (early return)
   if (!allRestaurants) return null;

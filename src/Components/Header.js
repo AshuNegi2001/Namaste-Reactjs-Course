@@ -27,6 +27,9 @@ const Header = () => {
             <Link to="/contact"className = "contact-link">Contact</Link>
           </li>
           <li>Cart</li>
+          <li>
+            <Link to="/instamart"className = "instamart-link">InstaMart</Link>
+          </li>
         </ul>
         {/** Here, we have our login and logout button */}
         {isSignedIn ? (
