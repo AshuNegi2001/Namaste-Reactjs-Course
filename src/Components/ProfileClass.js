@@ -1,5 +1,5 @@
 import React from "react";
-import { github_api_URL } from "../config";
+import { github_api_URL } from "../Config";
 
 class ProfileClass extends React.Component {
   constructor(props) {
