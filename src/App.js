@@ -7,9 +7,10 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./Components/About";
 import Error from "./Components/Error";
 import Contact from "./Components/Contact";
+import Cart from "./Components/Cart";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import SignIn from "./Components/SignIn";
-import Profile from "./Components/Profile";
+// import Profile from "./Components/Profile";
 import useOnline from "./utils/useOnline";
 // import InstaMart from "./Components/InstaMart";
 
@@ -50,13 +51,13 @@ const approuter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
-        children: [
-          {
-            //  we can create nested routes using children property in createBrowserRouter configuration...
-            path: "profile",
-            element: <Profile />,
-          },
-        ],
+        // children: [
+        //   {
+        //     //  we can create nested routes using children property in createBrowserRouter configuration...
+        //     path: "profile",
+        //     element: <Profile />,
+        //   },
+        // ],
       },
       {
         path: "/",
@@ -65,6 +66,10 @@ const approuter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/restaurant/:restaurantId",

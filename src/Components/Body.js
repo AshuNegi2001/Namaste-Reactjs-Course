@@ -5,8 +5,6 @@ import { swiggy_api_URL } from "../Config";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/Helper"; // For reusability, maintainability, readability filterData function is added in Helper.js file of Utils folder
 
-
-
 // Body Component for body section: It contain all restaurant cards
 // We are mapping restaurantList array and passing JSON data to RestaurantCard component as props with unique key as index
 const Body = () => {
@@ -48,25 +46,22 @@ const Body = () => {
   // if restaurants is empty => render shimer Ui
   // if restaurants has data => show the restauant card
 
-  
-  
-
   // not component render (early return)
   if (!allRestaurants) return null;
 
   //conditional rendering:
   return (
     <>
-      <div className="search-container">
+      <div className="flex justify-center my-5">
         <input
           type="text"
-          className="search-input"
+          className="p-2 mx-3 w-96 bg-slate-50 shadow-md focus:scale-105 rounded-lg focus:outline-none focus:ring focus:border-green-400"
           placeholder="Search a restaurant you want..."
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         ></input>
         <button
-          className="search-btn"
+          className="p-2 mx-3 bg-amber-400 rounded-lg w-20 text-white"
           onClick={() => {
             // filter the data
             const data = filterData(searchText, allRestaurants);
@@ -80,7 +75,7 @@ const Body = () => {
       {allRestaurants?.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="restaurant-list">
+        <div className="flex flex-wrap justify-center mb-8">
           {filteredRestaurants?.length === 0
             ? "No restaurants match your filter!" // conditional rendering
             : filteredRestaurants.map((restaurant) => {

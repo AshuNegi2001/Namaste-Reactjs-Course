@@ -1,38 +1,25 @@
-import React,{ Component } from "react";
-import { Outlet } from 'react-router-dom';
-import Profile from './Profile';
-import ProfileClass from './ProfileClass';
+import React from "react";
+import aboutFood from "../assets/Images/aboutFood.png";
 
-class About extends Component{
-
-    constructor(props){
-        super(props);
-        this.state = {
-            name: "Ashu Negi",
-            class: 10,
-        }
-        // console.log("Parent-contructor..");
-    }
-
-    componentDidMount(){
-        // console.log("Parent-mounted..");
-        
-    }
-    render(){
-        // console.log("Parent-rendered...")
-        return (
-            <>
-            <div>
-                <h1>This is our About Page...</h1>
-                <h2>Name:{this.state.name}</h2>
-                <h2>Class:{this.state.class}</h2>
-                {/* <ProfileClass xyz = "React" />  */}
-                <Profile  name = "function ashu"/>
-                <ProfileClass />
-            </div>
-            </>
-        )
-    }
-}
+const About = () => {
+  return (
+    <>
+      <div className="flex justify-evenly ml-5 h-screen">
+        <div className="mt-32 w-2/5">
+          <div className=" ml-32 font-bold text-6xl text-amber-400">
+            it's not just Food, it's an Experience.
+          </div>
+          <p className="py-3 ml-32 ">
+            We are helping you to get fresh and delicuous food in minutes by
+            using our nice Web & App.
+          </p>
+        </div>
+        <div className="w-3/5 mt-12">
+          <img className="" src={aboutFood} alt="" />
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default About;

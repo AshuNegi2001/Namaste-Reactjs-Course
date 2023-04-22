@@ -1,42 +1,72 @@
-import React, {useState} from 'react';
-import {useFormik} from 'formik';
-import * as Yup from 'yup';
-
+import React from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const signInSchema = Yup.object({
-    email: Yup.string().email().required("please enter your email"),
-    password: Yup.string().min(8, "password must be aleast 8 characters").required("please enter your password")
-
-})
+  email: Yup.string().email().required("please enter your email"),
+  password: Yup.string()
+    .min(8, "password must be aleast 8 characters")
+    .required("please enter your password"),
+});
 
 const initialValues = {
-    email: "",
-    password: "",
-}
+  email: "",
+  password: "",
+};
 
-const SignIn = () =>{
-    const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
-        initialValues,
-        validationSchema: signInSchema,
-        onSubmit : (value)=>(
-            alert(JSON.stringify(value))
-            
-        )
+const SignIn = () => {
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      initialValues,
+      validationSchema: signInSchema,
+      onSubmit: (value) => alert(JSON.stringify(value)),
     });
-    
-    return (
-        <div className = "signIn-container">
-        <form className = "signIn-form" onSubmit = {handleSubmit}>
-            <h1>Sign in</h1>
-            <input type="email"  className = "signIn-input-email" name = "email" autoComplete = "off" id = "email" placeholder = "Enter your email..." value = {values.email} onChange = {handleChange} onBlur = {handleBlur}/>
-            {(errors.email && touched.email)? <p className = "errors">{errors.email}</p> : null}
-            <input type="password"  className = "signIn-input-password" name = "password" autoComplete = "off" id = "password" placeholder = "Enter your password..." value = {values.password}  onChange = {handleChange} onBlur = {handleBlur}/>
-            {(errors.password && touched.password)? <p className = "errors">{errors.password}</p> : null}
 
-            <button type = "submit">Sign in</button>
-        </form>
-        </div>
-    )
-}
+  return (
+    <div className="w-96 mx-auto my-14 ">
+      <form
+        className=" bg-amber-400 p-4 rounded-lg  text-center"
+        onSubmit={handleSubmit}
+      >
+        <h1 className=" text-bold text-4xl my-4 text-white">Sign in</h1>
+        <input
+          type="email"
+          className="w-full mt-4 mb-2 p-2 box-border rounded-lg focus:outline-none "
+          name="email"
+          autoComplete="off"
+          id="email"
+          placeholder="Enter your email..."
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+        {errors.email && touched.email ? (
+          <p className="text-red-500 text-left ml-3 ">{errors.email}</p>
+        ) : null}
+        <input
+          type="password"
+          className="w-full mt-4 mb-2 p-2 box-border rounded-lg focus:outline-none"
+          name="password"
+          autoComplete="off"
+          id="password"
+          placeholder="Enter your password..."
+          value={values.password}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+        {errors.password && touched.password ? (
+          <p className="text-red-500  text-left ml-3">{errors.password}</p>
+        ) : null}
+
+        <button
+          className= "bg-gray-400 rounded-lg py-1 px-3 text-white my-4"
+          type="submit"
+        >
+          Sign in
+        </button>
+      </form>
+    </div>
+  );
+};
 
 export default SignIn;

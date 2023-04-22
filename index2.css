@@ -1,0 +1,234 @@
+/* all link css */
+a {
+  text-decoration: none;
+}
+
+/* Header css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.nav-items button {
+  border: none;
+  background: none;
+}
+.nav-items ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav-items ul li {
+  padding: 20px;
+}
+
+.home-link, .about-link, .contact-link, .instamart-link {
+  color: black;
+}
+
+/* search css */
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.search-input {
+  border: none;
+  outline: none;
+  width: 500px;
+  padding: 15px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  box-shadow: 0 2px 3px 0 rgba(221, 224, 236, 0.6),
+    -2px -2px 3px 0 rgba(221, 224, 236, 0.6);
+}
+
+.search-btn {
+  border: none;
+  padding: 15px;
+  background-color: rgba(255, 162, 0, 0.811);
+  color: white;
+  position: relative;
+  margin-left: -5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+}
+
+/* card css */
+
+.card {
+  width: 250px;
+  height: 350px;
+  padding: 10px 10px 0 10px;
+  margin: 10px;
+  box-shadow: 2px 4px 7px 0 rgba(221, 224, 236, 0.6),
+    -2px -4px 7px 0 rgba(221, 224, 236, 0.6);
+  border-radius: 5px;
+  border-color: #d3d5df;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: black;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card img {
+  width: 100%;
+  border-radius: 2px;
+}
+.card span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card> h5{
+  margin-top: 5px;
+} 
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  justify-content: center;
+}
+
+
+/* shimmer css */
+.shimmer-card {
+  width: 250px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #fcfcfc;
+  /* box-shadow: 5px 5px 5px 3px grey ; */
+  box-shadow: 2px 4px 7px 0 rgba(221, 224, 236, 0.6),
+    -2px -4px 7px 0 rgba(221, 224, 236, 0.6);
+  border-color: #d3d5df;
+}
+
+.shimmer-title {
+  width: 60%;
+  margin-top: 10px;
+}
+
+.shimmer-tags {
+  width: 80%;
+  margin-top: 10px;
+}
+
+.shimmer-details {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.stroke {
+  height: 20px;
+  background: #838383;
+}
+
+.shimmer-img {
+  height: 144px;
+  width: 250px;
+  border-radius: 1px;
+  /* width: 100%; */
+}
+
+.animate {
+  animation: shimmer 3s;
+  animation-iteration-count: infinite;
+  background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
+  background-size: 1000px 100%;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -1000px 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+} 
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+/* menu */
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+/* Sign in */
+.signIn-container {
+  width: 400px;
+  margin: 50px auto;
+}
+.signIn-form {
+  text-align: center;
+  max-width: 400px;
+  padding: 25px 40px;
+  border-radius: 10px;
+  background-color: rgba(255, 162, 0, 0.811);
+  color: white;
+}
+
+.signIn-input-email {
+  outline:0;
+  border: 0;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 14px;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  padding : 10px;
+  box-sizing: border-box;
+  
+}
+.signIn-input-password {
+  outline:0;
+  border: 0;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 14px;
+  color: black;
+  margin: 25px 0 12px 0;
+  padding : 10px;
+  box-sizing: border-box;
+  
+}
+
+.signIn-form button{
+  outline:0;
+  border: 0;
+  width: 25%;
+  border-radius: 8px;
+  background-color:  #abab98;
+  color: white;
+  font-size: 17px;
+  margin: 20px 0;
+  padding: 10px 5px;
+  cursor: pointer;
+}
+.signIn-form> p.errors {
+  color: red;
+  text-align:left;
+  margin: 0 0 0 10px;
+  
+}
