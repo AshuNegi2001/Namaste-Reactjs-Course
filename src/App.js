@@ -1,4 +1,4 @@
-import React ,{ lazy, Suspense }from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -13,31 +13,44 @@ import SignIn from "./Components/SignIn";
 // import Profile from "./Components/Profile";
 import useOnline from "./utils/useOnline";
 // import InstaMart from "./Components/InstaMart";
+// import UserContext from "./utils/UserContext";
 
-const InstaMart = lazy(()=> import('./Components/InstaMart'));
+const InstaMart = lazy(() => import("./Components/InstaMart"));
 // whenever we will do on demand loading in our website react will suspend our rendering of that component.and If we want to stop that suspend loading then, we will use <suspense> component from react library.
 
-
 // These all are similiar things:
-// code splitting 
+// code splitting
 // chunking
 // dynamic bundling
 // lazy loading
-// on demand loading 
+// on demand loading
 // dynamic import
 
 const AppLayout = () => {
 
-  // This hook will return boolean value for online or offline 
+  // const[user, setUser] = useState({ // It is a data which we used in User.Context.provider as value.
+  //   name: "Ashu Negi",
+  //   email: "ashunegi686@gmail.com"
+  // });
+
+  // This hook will return boolean value for online or offline
   const isOnline = useOnline();
-  if(!isOnline) {
-    return <h1> !Ooh Offline, Please Check your internet</h1>
+  if (!isOnline) {
+    return <h1> !Ooh Offline, Please Check your internet</h1>;
   }
   return (
     <>
       <Header />
       <Outlet />
       <Footer />
+
+      {/* <UserContext.Provider value = {{ // Basically, If we want to use `context` data in our every component then, we will wrap all the component inside our `user.Context.Provider` component and value is used for changing the default dummy data which is already placed in `UserContext.js`. The `value` attribute will change the default data with the `user` data.
+        user: user, 
+        setUser: setUser}}>
+      <Header />
+      <Outlet />
+      <Footer />
+      </UserContext.Provider> */}
     </>
   );
 };
@@ -77,7 +90,12 @@ const approuter = createBrowserRouter([
       },
       {
         path: "instamart",
-        element: <Suspense fallback = {<h1> This is shimmer of Instamart</h1>}> <InstaMart /></Suspense>,
+        element: (
+          <Suspense fallback={<h1> This is shimmer of Instamart</h1>}>
+            {" "}
+            <InstaMart />
+          </Suspense>
+        ),
       },
     ],
   },

@@ -1,9 +1,10 @@
 import RestaurantCard from "./RestaurantCard";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { swiggy_api_URL } from "../Config";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/Helper"; // For reusability, maintainability, readability filterData function is added in Helper.js file of Utils folder
+// import UserContext from "../utils/UserContext";
 
 // Body Component for body section: It contain all restaurant cards
 // We are mapping restaurantList array and passing JSON data to RestaurantCard component as props with unique key as index
@@ -34,6 +35,8 @@ const Body = () => {
 
   // empty dependency array => once useEffect call after the initial render
   // when [searchText] is dependency array => once useEffect call after the initial render + everytime call or render when searchText changes
+
+  // const {user, setUser} = useContext(UserContext); // It is useContext hook to access context data.
 
   async function getRestaurants() {
     const data = await fetch(swiggy_api_URL);
@@ -71,6 +74,16 @@ const Body = () => {
         >
           Search
         </button>
+
+        {/* This is useContext example:
+
+        <input className = "mx-2" type = "text" value = {user.name} onChange = {(e)=>setUser({name: e.target.value,
+        email: "newMail@gmail.com",
+        })}></input>
+        <input className = "mx-2" type="text" value = {user.email} onChange = {(e)=>setUser({
+          name: "dummyName",
+          email: e.target.value,
+        })}/> */}
       </div>
       {allRestaurants?.length === 0 ? (
         <Shimmer />
