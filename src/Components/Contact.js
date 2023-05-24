@@ -34,7 +34,7 @@ const Contact = () => {
     });
   return (
     <>
-      <div className= "bg-amber-400 w-full h-screen flex justify-evenly">
+      <div className="bg-amber-400 w-full h-screen flex justify-evenly">
         <div className="w-4/12">
           <img className="w-96 mt-12 mx-auto" src={contact} alt="" />
         </div>
@@ -49,7 +49,7 @@ const Contact = () => {
               type="text"
               className="w-full mt-4 mb-2 mx-auto p-2 rounded-lg"
               name="name"
-              autocomplete="off"
+              autoComplete="off"
               value={values.name}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -63,7 +63,7 @@ const Contact = () => {
               type="email"
               className="w-full mt-4 mb-2 mx-auto p-2 rounded-lg"
               name="email"
-              autocomplete="off"
+              autoComplete="off"
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -77,7 +77,7 @@ const Contact = () => {
               type="tel"
               className="w-full  mt-4 mb-2 mx-auto p-2 rounded-lg "
               name="phoneNumber"
-              auotocomplete="off"
+              autoComplete="off"
               value={values.phoneNumber}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -93,8 +93,8 @@ const Contact = () => {
               className="w-full mt-4 mb-2 mx-auto p-2 rounded-lg"
               name="message"
               id="message"
-              cols="2"
-              rows="2"
+              cols={2}
+              rows={2}
               value={values.message}
               onChange={handleChange}
               onBlur={handleBlur}

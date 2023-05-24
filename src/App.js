@@ -14,6 +14,8 @@ import SignIn from "./Components/SignIn";
 import useOnline from "./utils/useOnline";
 // import InstaMart from "./Components/InstaMart";
 // import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import store from "./utils/store.js";
 
 const InstaMart = lazy(() => import("./Components/InstaMart"));
 // whenever we will do on demand loading in our website react will suspend our rendering of that component.and If we want to stop that suspend loading then, we will use <suspense> component from react library.
@@ -27,7 +29,6 @@ const InstaMart = lazy(() => import("./Components/InstaMart"));
 // dynamic import
 
 const AppLayout = () => {
-
   // const[user, setUser] = useState({ // It is a data which we used in User.Context.provider as value.
   //   name: "Ashu Negi",
   //   email: "ashunegi686@gmail.com"
@@ -40,10 +41,11 @@ const AppLayout = () => {
   }
   return (
     <>
-      <Header />
-      <Outlet />
-      <Footer />
-
+      <Provider store={store}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </Provider>
       {/* <UserContext.Provider value = {{ // Basically, If we want to use `context` data in our every component then, we will wrap all the component inside our `user.Context.Provider` component and value is used for changing the default dummy data which is already placed in `UserContext.js`. The `value` attribute will change the default data with the `user` data.
         user: user, 
         setUser: setUser}}>

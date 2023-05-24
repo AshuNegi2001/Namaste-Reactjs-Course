@@ -5,7 +5,7 @@ const About = () => {
   return (
     <>
       <div className="flex justify-evenly ml-5 h-screen">
-        <div className="mt-32 w-2/5">
+        <div className="mt-32 w-2/5 font-normal">
           <div className=" ml-32 font-bold text-6xl text-amber-400">
             it's not just Food, it's an Experience.
           </div>

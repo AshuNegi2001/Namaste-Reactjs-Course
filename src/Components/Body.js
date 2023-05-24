@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { swiggy_api_URL } from "../Config";
 import { Link } from "react-router-dom";
@@ -92,12 +92,13 @@ const Body = () => {
           {filteredRestaurants?.length === 0
             ? "No restaurants match your filter!" // conditional rendering
             : filteredRestaurants.map((restaurant) => {
+                // console.log(restaurant);
                 return (
                   <Link
-                    to={"/restaurant/" + restaurant.data.id}
-                    key={restaurant.data.id} // Now, the key should be in our Link component because when we use map function in react which component we mapping it should have any key.
+                    to={"/restaurant/" + restaurant?.data.id}
+                    key={restaurant?.data?.id} // Now, the key should be in our Link component because when we use map function in react which component we mapping it should have any key.
                   >
-                    <RestaurantCard {...restaurant.data} />
+                    <RestaurantCard {...restaurant?.data} />
                   </Link>
                 );
               })}
