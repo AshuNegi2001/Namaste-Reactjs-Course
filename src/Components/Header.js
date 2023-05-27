@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import logo from "../assets/Images/foodpipe.png";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 export const Title = () => {
   return (
     <div className="flex justify-center pl-4 py-2">
-      <img className="cursor-pointer" src={logo} alt="logo" width="100" />
+      <img  data-testid = "logo" className="cursor-pointer" src={logo} alt="logo" width="100" />
     </div>
   );
 };
@@ -29,7 +29,7 @@ const Header = () => {
           <li className="px-3 hover:text-amber-400">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="px-3 hover:text-amber-400">
+          <li data-testid= "cart"  className="px-3 hover:text-amber-400">
             <Link to="/cart">
               Cart{" "}
               {totalItemsCount === 0 ? null : (

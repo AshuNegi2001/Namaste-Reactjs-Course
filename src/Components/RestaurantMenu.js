@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import useGetMenu from "../utils/useGetMenu";
 import ShimmerMenu from "./ShimmerMenu";
@@ -16,10 +15,9 @@ const RestaurantMenu = () =>{
     return !restaurant ? (
         <ShimmerMenu/> ):
         (
-            <div className = "">
+            <div data-testid = "menu" className = "">
                 <RestaurantInfo {...restaurant.info}/> {/* Here I spreaded all the property using spread Operator.*/}
                 <RestaurantMenuList menu = {restaurant.menu} />
-
             </div>
 
         )

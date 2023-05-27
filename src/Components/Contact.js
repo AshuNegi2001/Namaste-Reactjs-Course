@@ -1,4 +1,3 @@
-import React from "react";
 import contact from "../assets/Images/contact.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";

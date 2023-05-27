@@ -1,4 +1,3 @@
-import React from "react";
 import { shimmer_card_unit } from "../Config";
 
 const ShimmerMenuCard = () => {

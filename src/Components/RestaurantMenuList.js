@@ -1,4 +1,3 @@
-import React from "react";
 import RestaurantNestedItemCategory from "./RestaurantNestedItemCategory";
 import RestaurantItemCategory from "./RestaurantItemCategory";
 // import {useSelector} from "react-redux";

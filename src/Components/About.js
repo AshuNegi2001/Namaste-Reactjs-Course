@@ -1,4 +1,3 @@
-import React from "react";
 import aboutFood from "../assets/Images/aboutFood.png";
 
 const About = () => {

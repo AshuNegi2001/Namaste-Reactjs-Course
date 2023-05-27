@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { swiggy_api_URL } from "../Config";
 import { Link } from "react-router-dom";
@@ -57,13 +57,14 @@ const Body = () => {
     <>
       <div className="flex justify-center my-5">
         <input
+          data-testid = "search-input"
           type="text"
           className="p-2 mx-3 w-96 bg-slate-50 shadow-md focus:scale-105 rounded-lg focus:outline-none focus:ring focus:border-green-400"
           placeholder="Search a restaurant you want..."
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         ></input>
-        <button
+        <button data-testid = "search-btn"
           className="p-2 mx-3 bg-amber-400 rounded-lg w-20 text-white"
           onClick={() => {
             // filter the data
@@ -88,7 +89,7 @@ const Body = () => {
       {allRestaurants?.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="flex flex-wrap justify-center mb-8">
+        <div data-testid = "res-list" className="flex flex-wrap justify-center mb-8">
           {filteredRestaurants?.length === 0
             ? "No restaurants match your filter!" // conditional rendering
             : filteredRestaurants.map((restaurant) => {

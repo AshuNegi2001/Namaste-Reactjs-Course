@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import useItemTotal from "../utils/useItemTotal";
 import { addItem, removeItem, clearCart } from "../utils/cartSlice.js";

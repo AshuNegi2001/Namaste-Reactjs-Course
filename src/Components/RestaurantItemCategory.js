@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import MenuItem from "./MenuItem";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 

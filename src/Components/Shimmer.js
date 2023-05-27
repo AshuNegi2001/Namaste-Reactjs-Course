@@ -1,4 +1,3 @@
-import React from "react";
 import { shimmer_card_unit } from "../Config";
 
 const ShimmerCard = () => {
@@ -17,7 +16,7 @@ const ShimmerCard = () => {
 const Shimmer = () => {
   return (
     <>
-      <div className="flex flex-wrap justify-center">
+      <div data-testid = "shimmer" className="flex flex-wrap justify-center">
         {new Array(shimmer_card_unit).fill().map((_, index) => {
           return <ShimmerCard key={index} />;
         })}

@@ -1,4 +1,3 @@
-import React from "react";
 import veg from "../assets/Images/veg.png";
 import nonVeg from "../assets/Images/nonVeg.png";
 import { IMG_CDN_URL } from "../Config";
@@ -15,7 +14,7 @@ const MenuItem = ({ item }) => {
 
   return (
     <>
-      <div className="" key={id}>
+      <div  className="" key={id}>
         <div className="flex mx-auto justify-between py-8 px-11 ">
           <div className="w-96">
             <img className="w-6 h-6" src={isVeg === 1 ? veg : nonVeg} alt="" />
@@ -30,6 +29,7 @@ const MenuItem = ({ item }) => {
               alt={name}
             />
             <button
+              data-testid = "add-btn"
               className="bg-slate-100 text-green-500 w-20 mb-0 py-1 px-4 rounded-lg mx-auto -mt-6"
               onClick={() => {
                 handleAddItem(item);
