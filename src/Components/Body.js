@@ -89,7 +89,7 @@ const Body = () => {
       {allRestaurants?.length === 0 ? (
         <Shimmer />
        ) : (
-        <div data-testid = "res-list" className="flex flex-wrap mb-8 justify-center mx-auto">
+        <div data-testid = "res-list" className="flex flex-wrap mb-8 justify-center mx-auto h-screen">
           {filteredRestaurants?.length === 0
             ? "No restaurants match your filter!" // conditional rendering
             : filteredRestaurants.map((restaurant) => {
