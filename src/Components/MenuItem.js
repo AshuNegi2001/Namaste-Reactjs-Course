@@ -1,7 +1,7 @@
 import veg from "../assets/Images/veg.png";
 import nonVeg from "../assets/Images/nonVeg.png";
 import { IMG_CDN_URL } from "../Config";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice.js";
 
 const MenuItem = ({ item }) => {
@@ -22,7 +22,7 @@ const MenuItem = ({ item }) => {
             <h2 className="text-lg font-medium">₹{price / 100}</h2>
             <h3 className="text-sm font-extralight">{description}</h3>
           </div>
-          <div className="flex flex-col align-end ">
+          <div className=" flex flex-col my-auto ">
             <img
               className="h-28 w-28 rounded-lg object-cover "
               src={IMG_CDN_URL + imageId}
@@ -30,7 +30,7 @@ const MenuItem = ({ item }) => {
             />
             <button
               data-testid = "add-btn"
-              className="bg-slate-100 text-green-500 w-20 mb-0 py-1 px-4 rounded-lg mx-auto -mt-6"
+              className="bg-slate-100 text-green-500 w-16 mb-0 py-1 px-4 rounded-lg mx-auto -mt-6"
               onClick={() => {
                 handleAddItem(item);
               }}

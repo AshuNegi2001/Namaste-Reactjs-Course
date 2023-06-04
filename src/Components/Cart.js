@@ -21,7 +21,7 @@ const Cart = () => {
   };
 
   return Object.values(cartItems).length > 0 ? (
-    <div className="w-2/5 bg-amber-400 mx-auto my-3 rounded-lg text-white p-3">
+    <div className=" w-4/5 sm:w-3/5 md:w-3/5 lg:w-2/5 bg-amber-400 mx-auto my-3 rounded-lg text-white p-3">
       <div className="flex justify-between">
         <h1 className="text-xl font-semibold">
           Total CartItems({totalItemsCount})
@@ -39,8 +39,11 @@ const Cart = () => {
         {Object.values(cartItems).map((item) => {
           return (
             <>
-              <div key={item.id} className="flex justify-between w-full my-5">
-                <div className="w-1/5 ">
+              <div
+                key={item.id}
+                className="flex justify-between w-full my-5 mt-7"
+              >
+                <div className="w-1/5 flex items-center">
                   <img
                     className="rounded-lg"
                     src={IMG_CDN_URL + item?.imageId}
@@ -89,11 +92,11 @@ const Cart = () => {
     </div>
   ) : (
     <>
-      <div className=" w-1/4 mx-auto my-5 p-3 ">
-        <div className="flex justify-center">
+      <div className=" w-4/5 mx-auto mt-16 p-3 h-screen">
+        <div className=" mx-auto w-2/5">
           <img src={cart} alt="cart image" />
         </div>
-        <div className="text-center mt-5 text-lg font-normal">
+        <div className="text-center mt-5 md:text-lg text-sm font-normal">
           <h1>Your cart is empty!</h1>
           <h2>Please! Go and Order something special</h2>
         </div>

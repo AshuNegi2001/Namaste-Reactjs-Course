@@ -55,17 +55,17 @@ const Body = () => {
   //conditional rendering:
   return (
     <>
-      <div className="flex justify-center my-5">
+      <div className="flex justify-center mb-5 mt-10">
         <input
           data-testid = "search-input"
           type="text"
-          className="p-2 mx-3 w-96 bg-slate-50 shadow-md focus:scale-105 rounded-lg focus:outline-none focus:ring focus:border-green-400"
-          placeholder="Search a restaurant you want..."
+          className=" p-2 mx-3 w-44 bg-white shadow-md focus:scale-105 rounded-lg focus:outline-none focus:ring focus:border-green-400 lg:w-96 md:w-80 sm:w-64"
+          placeholder="Search a meal..."
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
-        ></input>
+        ></input> 
         <button data-testid = "search-btn"
-          className="p-2 mx-3 bg-amber-400 rounded-lg w-20 text-white"
+          className="p-1 mx-2 bg-amber-400 rounded-lg w-20 text-white md:p-2 md:mx-3"
           onClick={() => {
             // filter the data
             const data = filterData(searchText, allRestaurants);
@@ -88,8 +88,8 @@ const Body = () => {
       </div>
       {allRestaurants?.length === 0 ? (
         <Shimmer />
-      ) : (
-        <div data-testid = "res-list" className="flex flex-wrap justify-center mb-8">
+       ) : (
+        <div data-testid = "res-list" className="flex flex-wrap mb-8 justify-center mx-auto">
           {filteredRestaurants?.length === 0
             ? "No restaurants match your filter!" // conditional rendering
             : filteredRestaurants.map((restaurant) => {

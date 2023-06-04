@@ -29,7 +29,7 @@ const InstaMart = () => {
   return (
     <>
       <h1>INSTAMART ACCORDIN</h1>
-      <div className="">
+      <div className="h-screen">
         <Section
           title={"Career"}
           isVisible={visibleSection === "Career"} // If visibleSection will be equal to Career then it will show the content.

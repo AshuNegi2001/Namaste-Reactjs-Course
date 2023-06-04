@@ -22,12 +22,14 @@ const SignIn = () => {
     });
 
   return (
-    <div className="w-96 mx-auto my-14 ">
+    <div className="sm:w-96 w-72 mx-auto my-14 ">
       <form
         className=" bg-amber-400 p-4 rounded-lg  text-center"
         onSubmit={handleSubmit}
       >
-        <h1 className=" text-bold text-4xl my-4 text-white">Sign in</h1>
+        <h1 className=" text-bold text-4xl sm:my-4 mb-4 mt-1 text-white">
+          Sign in
+        </h1>
         <input
           type="email"
           className="w-full mt-4 mb-2 p-2 box-border rounded-lg focus:outline-none "
@@ -58,7 +60,7 @@ const SignIn = () => {
         ) : null}
 
         <button
-          className= "bg-gray-400 rounded-lg py-1 px-3 text-white my-4"
+          className="bg-gray-400 rounded-lg py-1 px-3 text-white my-4"
           type="submit"
         >
           Sign in

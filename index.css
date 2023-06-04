@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities; 
 
+.active {
+    @apply  w-60 z-20  bg-white h-screen left-0 fixed top-[55px];
+}

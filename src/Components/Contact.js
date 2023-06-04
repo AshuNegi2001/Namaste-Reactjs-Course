@@ -1,6 +1,6 @@
 import contact from "../assets/Images/contact.png";
 import { useFormik } from "formik";
-import * as Yup from "yup";
+import * as Yup from "yup"; // for validating 
 import "yup-phone-lite";
 
 const userSchema = Yup.object({
@@ -34,11 +34,11 @@ const Contact = () => {
   return (
     <>
       <div className="bg-amber-400 w-full h-screen flex justify-evenly">
-        <div className="w-4/12">
+        <div className="hidden xl:block xl:w-4/12">
           <img className="w-96 mt-12 mx-auto" src={contact} alt="" />
         </div>
 
-        <div className="w-4/12">
+        <div className="w-full sm:w-4/5 md:w-3/5 xl:w-4/12">
           <form
             className="mt-12 mx-auto bg text-center px-24"
             onSubmit={handleSubmit}
