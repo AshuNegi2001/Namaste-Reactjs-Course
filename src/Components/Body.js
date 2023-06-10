@@ -59,7 +59,7 @@ const Body = () => {
         <input
           data-testid = "search-input"
           type="text"
-          className=" p-2 mx-3 w-44 bg-white shadow-md focus:scale-105 rounded-lg focus:outline-none focus:ring focus:border-green-400 lg:w-96 md:w-80 sm:w-64"
+          className="outline-none p-2 mx-3 w-44 bg-white shadow-md focus:scale-105 rounded-lg lg:w-96 md:w-80 sm:w-64"
           placeholder="Search a meal..."
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
@@ -89,9 +89,9 @@ const Body = () => {
       {allRestaurants?.length === 0 ? (
         <Shimmer />
        ) : (
-        <div data-testid = "res-list" className="flex flex-wrap mb-8 justify-center mx-auto h-screen">
+        <div data-testid = "res-list" className="flex flex-wrap mb-8 justify-center mx-auto">
           {filteredRestaurants?.length === 0
-            ? "No restaurants match your filter!" // conditional rendering
+            ? <div className = "h-screen">No restaurants match your filter!</div> // conditional rendering
             : filteredRestaurants.map((restaurant) => {
                 // console.log(restaurant);
                 return (
