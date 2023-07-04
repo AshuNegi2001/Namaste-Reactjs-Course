@@ -29,7 +29,7 @@ const InstaMart = lazy(() => import("./Components/InstaMart"));
 // dynamic import
 
 const AppLayout = () => {
-  // const[user, setUser] = useState({ // It is a data which we used in User.Context.provider as value.
+  // const[user, setUser] = useState({ // It is a data which we used in UserContext.provider as value.
   //   name: "Ashu Negi",
   //   email: "ashunegi686@gmail.com"
   // });
