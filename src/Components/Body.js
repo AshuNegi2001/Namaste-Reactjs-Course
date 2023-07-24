@@ -65,7 +65,7 @@ const Body = () => {
           onChange={(e) => setSearchText(e.target.value)}
         ></input> 
         <button data-testid = "search-btn"
-          className="p-1 mx-2 bg-amber-400 rounded-lg w-20 text-white md:p-2 md:mx-3"
+          className="p-1 mx-2 bg-amber-400 rounded-lg w-20 text-white md:p-2 md:mx-3 hover:bg-green-400"
           onClick={() => {
             // filter the data
             const data = filterData(searchText, allRestaurants);
