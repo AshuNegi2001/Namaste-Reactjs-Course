@@ -1011,4 +1011,4 @@ export const swiggyMenu_api_URL = " https://www.swiggy.com/dapi/menu/pl?page-typ
 
 export const github_api_URL = "https://api.github.com/users/AshuNegi2001";
 
- export const shimmer_card_unit = 9;
+ export const shimmer_card_unit = 15;

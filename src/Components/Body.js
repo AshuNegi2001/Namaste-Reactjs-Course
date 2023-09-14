@@ -41,11 +41,11 @@ const Body = () => {
   async function getRestaurants() {
     const data = await fetch(swiggy_api_URL);
     const json = await data.json();
-    // console.log(json);
-    // console.log(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    console.log(json);
+    // console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     // Optional chaining:
-    setAllRestaurants(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilteredRestaurants(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setAllRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   // if restaurants is empty => render shimer Ui
   // if restaurants has data => show the restauant card
