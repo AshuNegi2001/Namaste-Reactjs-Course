@@ -42,9 +42,10 @@ const Body = () => {
     const data = await fetch(swiggy_api_URL);
     const json = await data.json();
     // console.log(json);
+    // console.log(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     // Optional chaining:
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setAllRestaurants(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredRestaurants(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   // if restaurants is empty => render shimer Ui
   // if restaurants has data => show the restauant card
@@ -96,10 +97,10 @@ const Body = () => {
                 // console.log(restaurant);
                 return (
                   <Link
-                    to={"/restaurant/" + restaurant?.data.id}
-                    key={restaurant?.data?.id} // Now, the key should be in our Link component because when we use map function in react which component we mapping it should have any key.
+                    to={"/restaurant/" + restaurant?.info?.id}
+                    key={restaurant?.info?.id} // Now, the key should be in our Link component because when we use map function in react which component we mapping it should have any key.
                   >
-                    <RestaurantCard {...restaurant?.data} />
+                    <RestaurantCard {...restaurant?.info} />
                   </Link>
                 );
               })}
