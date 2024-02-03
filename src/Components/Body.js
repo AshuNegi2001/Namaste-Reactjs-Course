@@ -86,6 +86,7 @@ const Body = () => {
           name: "dummyName",
           email: e.target.value,
         })}/> */}
+        
       </div>
       {allRestaurants?.length === 0 ? (
         <Shimmer />
