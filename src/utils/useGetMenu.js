@@ -13,9 +13,9 @@ const useGetMenu = (restaurantId) => {
     try {
       const data = await fetch(swiggyMenu_api_URL + restaurantId);
       const json = await data.json();
-      console.log(json);
+      // console.log(json);
       const menuItemsList =
-        json?.data?.cards[2]["groupedCard"]?.cardGroupMap?.REGULAR?.cards;
+        json?.data?.cards[4]["groupedCard"]?.cardGroupMap?.REGULAR?.cards;
       const itemCategory =
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
       const nestedItemCategory =

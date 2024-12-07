@@ -9,7 +9,7 @@ import RestaurantMenuList from "./RestaurantMenuList";
 
 const RestaurantMenu = () =>{
     const { restaurantId } = useParams(); // It will return dynamic url id
-
+    // console.log(restaurantId);
     const restaurant = useGetMenu(restaurantId); // Passing restaurantId to custom Hook to fetch restaurant data.
     console.log(restaurant);
     return !restaurant ? (

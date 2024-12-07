@@ -1,13 +1,16 @@
 import { IMG_CDN_URL } from "../Config";
 
 const RestaurantInfo = ({
-  cloudinaryImageId,
+  // cloudinaryImageId,
   name,
+  cloudinaryImageId,
   cuisines,
   areaName,
   avgRating,
-  costForTwoMessage,
-}) => {
+  costForTwo,
+}) =>
+  // console.log(name);
+   {
   return (
     <>
       <div className="bg-black">
@@ -27,7 +30,7 @@ const RestaurantInfo = ({
             <h3 className="my-1">
               <span className="pr-2">{avgRating}</span>
               <span className="p-3">|</span>
-              <span className="text-xs sm:text-sm py-3 pl-2">{costForTwoMessage}</span>
+              <span className="text-xs sm:text-sm py-3 pl-2">{costForTwo}</span>
             </h3>
           </div>
         </div>
