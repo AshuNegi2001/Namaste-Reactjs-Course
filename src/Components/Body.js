@@ -97,7 +97,7 @@ const Body = () => {
           {filteredRestaurants?.length === 0
             ? <div className = "h-screen">No restaurants match your filter!</div> // conditional rendering
             : filteredRestaurants.map((restaurant) => {
-                console.log(restaurant);
+                {/* console.log(restaurant); */}
                 return (
                   <Link
                     to={"/restaurant/" + restaurant?.info?.id}

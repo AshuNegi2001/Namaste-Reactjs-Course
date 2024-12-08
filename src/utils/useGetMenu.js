@@ -33,7 +33,7 @@ const useGetMenu = (restaurantId) => {
 
       // Now, we modified data because we don't want to use same line in every where.
       const modifiedData = {
-        info: json.data?.cards[0]?.card?.card?.info,
+        info: json.data?.cards[2]?.card?.card?.info,
         menu: menu.filter((value) => value !== undefined),
       };
 

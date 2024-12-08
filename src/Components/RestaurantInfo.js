@@ -1,17 +1,17 @@
 import { IMG_CDN_URL } from "../Config";
 
 const RestaurantInfo = ({
-  // cloudinaryImageId,
-  name,
   cloudinaryImageId,
+  name,
   cuisines,
   areaName,
   avgRating,
   costForTwo,
 }) =>
-  // console.log(name);
+  
    {
   return (
+    
     <>
       <div className="bg-black">
         <div className="flex w-full lg:w-3/5 md:w-4/5 lg:h-4/5 mx-auto px-8 py-5">
