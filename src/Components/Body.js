@@ -16,7 +16,7 @@ const Body = () => {
 
   useEffect(() => {
     // API call
-    getRestaurants(); // we can't call async funtion directly here because it will give to performance loss.
+    getRestaurants(); // we can't call async funtion directly here because it will give to  performance loss.
   }, []);
 
   //  useEffect Hook => Concept start from here...
