@@ -1,4 +1,3 @@
-import 'dynamic-import-polyfill';
 import { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";

@@ -1,16 +1,21 @@
-{
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "useBuiltIns": "usage",
-          "corejs": 3,
-          "targets": {
-            "node": "current"
-          }
-        }
-      ]
-    ]
-  }
+// Babel requires only JSON so, we can't use js object.
 
-  
+// {
+//     "plugins": [ ["transform-remove-console", { "exclude": [ "error", "warn"] }] ]
+//   }
+// {
+//   "plugins": [
+//     ["transform-remove-console", { "exclude": ["error", "warn", "log"] }]
+//   ]
+// },
+
+
+{
+  "presets": [
+    ["@parcel/babel-preset"],
+    ["@babel/preset-react", { "runtime": "automatic" }]
+  ] // I wrote this config because I want to use import in js file.
+}
+
+
+

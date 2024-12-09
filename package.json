@@ -23,7 +23,6 @@
     "@parcel/babel-preset": "^2.0.0-alpha.2",
     "@parcel/runtime-js": "^2.13.2",
     "@reduxjs/toolkit": "^2.3.0",
-    "core-js": "^3.39.0",
     "dynamic-import-polyfill": "^0.1.1",
     "formik": "^2.4.6",
     "npm": "^10.9.0",
@@ -39,6 +38,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.25.9",
     "@parcel/babel-preset-env": "^2.13.0",
@@ -46,6 +46,7 @@
     "@testing-library/react": "^16.0.1",
     "babel-jest": "^29.7.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "core-js": "^3.39.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "parcel": "^2.13.2",
@@ -56,8 +57,10 @@
   "engines": {
     "node": "^18.17.0 || >=20.5.0"
   },
-  "browserLists": [
-    "last 2 chrome versions",
-    "> 0.5%"
-  ]
+    "browserslist": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "> 0.5%"
+    ]
 }
