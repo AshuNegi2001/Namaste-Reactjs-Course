@@ -10,9 +10,20 @@
 // },
 
 
+// {
+//   "presets": [
+//     ["@babel/preset-env", { "targets": { "node": "current" } }],
+//     ["@babel/preset-react", { "runtime": "automatic" }]
+//   ] // I wrote this config because I want to use import in js file.
+// }
 {
   "presets": [
-    ["@babel/preset-env", { "targets": { "node": "current" } }],
+    ["@parcel/babel-preset"],
     ["@babel/preset-react", { "runtime": "automatic" }]
   ] // I wrote this config because I want to use import in js file.
 }
+
+// {
+//   "presets": ["@parcel/babel-preset"]
+// }
+
