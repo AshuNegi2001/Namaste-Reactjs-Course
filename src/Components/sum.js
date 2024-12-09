@@ -11,7 +11,7 @@ export default sum;
 *  end-to-end testing
 *  Unit testing
 *  Integration testing
-*  and more
+*  and  more
 *
 */
 
