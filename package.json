@@ -57,10 +57,10 @@
   "engines": {
     "node": "^18.17.0 || >=20.5.0"
   },
-    "browserslist": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version",
-      "> 0.5%"
-    ]
+  "browserslist": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version",
+    "> 0.5%"
+  ]
 }

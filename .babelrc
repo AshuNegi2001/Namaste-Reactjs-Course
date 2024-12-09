@@ -10,11 +10,27 @@
 // },
 
 
+// {
+//   "presets": [
+//     ["@babel/preset-env", { "targets": { "node": "current" } }],
+//     ["@babel/preset-react", { "runtime": "automatic" }]
+//   ] // I wrote this config because I want to use import in js file.
+// }
+
+
 {
   "presets": [
-    ["@babel/preset-env", { "targets": { "node": "current" } }],
-    ["@babel/preset-react", { "runtime": "automatic" }]
-  ] // I wrote this config because I want to use import in js file.
+    ["@babel/preset-env", {
+      "targets": {
+        "node": "current"
+      },
+      "useBuiltIns": "entry",
+      "corejs": 3
+    }]
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import"
+  ]
 }
 
 
