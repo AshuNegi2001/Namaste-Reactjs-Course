@@ -10,7 +10,7 @@ import Contact from "./Components/Contact";
 import Cart from "./Components/Cart";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import SignIn from "./Components/SignIn";
-// import Profile from "./Components/Profile";
+//  import Profile from "./Components/Profile";
 import useOnline from "./utils/useOnline";
 // import InstaMart from "./Components/InstaMart";
 // import UserContext from "./utils/UserContext";
