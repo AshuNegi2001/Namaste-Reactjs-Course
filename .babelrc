@@ -18,19 +18,21 @@
 // }
 
 
+// {
+//   "presets": [
+//     [ "@parcel/babel-preset-env", {
+//       "targets": {
+//         "node": "current"
+//       },
+//       "useBuiltIns": "entry",
+//       "corejs": 3
+//     }]
+//   ],
+//   "plugins": [
+//     "@babel/plugin-syntax-dynamic-import"
+//   ]
+// }
+
 {
-  "presets": [
-    [ "@parcel/babel-preset-env", {
-      "targets": {
-        "node": "current"
-      },
-      "useBuiltIns": "entry",
-      "corejs": 3
-    }]
-  ],
-  "plugins": [
-    "@babel/plugin-syntax-dynamic-import"
-  ]
+  "plugins": ["@emotion/babel-plugin"]
 }
-
-

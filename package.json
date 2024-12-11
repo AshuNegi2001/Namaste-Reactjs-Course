@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/AshuNegi2001/Namaste-Reactjs-Course#readme",
   "dependencies": {
+    "@emotion/babel-plugin": "^11.13.5",
     "@parcel/babel-preset": "^2.0.0-alpha.2",
     "@parcel/runtime-js": "^2.13.2",
     "@reduxjs/toolkit": "^2.3.0",
