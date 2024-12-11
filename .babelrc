@@ -20,7 +20,7 @@
 
 {
   "presets": [
-    [ "@babel/preset-env", {
+    [ "@parcel/babel-preset-env", {
       "targets": {
         "node": "current"
       },
