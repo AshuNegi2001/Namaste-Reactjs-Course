@@ -1,2 +1,2 @@
 [build]
-node_version = "22" # Replace with your Node version
+node_version = "18" # Replace with your Node version
