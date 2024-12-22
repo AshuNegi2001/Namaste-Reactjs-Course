@@ -46,7 +46,7 @@ const AppLayout = () => {
         <Outlet />
         <Footer />
       </Provider>
-      {/* <UserContext.Provider value = {{ //Basically, If we want to use `context` data in our every component then, we will wrap all the component inside our `user.Context.Provider` component and value is used for changing the default dummy data which is already placed in `UserContext.js`. The `value` attribute will change the default data with the `user` data.
+      {/* <UserContext.Provider value = {{  //Basically, If we want to use `context` data in our every component then, we will wrap all the component inside our `user.Context.Provider` component and value is used for changing the default dummy data which is already placed in `UserContext.js`. The `value` attribute will change the default data with the `user` data.
         user: user, 
         setUser: setUser}}>
       <Header />
