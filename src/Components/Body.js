@@ -101,7 +101,7 @@ const Body = () => {
                 return (
                   <Link
                     to={"/restaurant/" + restaurant?.info?.id}
-                    key={restaurant?.info?.id} // Now, the key should be in our Link component because when we use map function in react which component we mapping it should have any key.
+                    key={restaurant?.info?.id} // Now, The key should be in our Link component because when we use map function in react which component we mapping it should have any key.
                   >
                     <RestaurantCard {...restaurant?.info} />
                   </Link>
